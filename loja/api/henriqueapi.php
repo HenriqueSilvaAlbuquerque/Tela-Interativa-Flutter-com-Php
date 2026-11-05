@@ -2,6 +2,9 @@
 header('Content-Type: application/json; charset=utf-8');
 header('Access-Control-Allow-Origin: *');
 
+// Evita valores como 29.899999999999999 no JSON (alguns servidores usam precisão máxima).
+ini_set('serialize_precision', 14);
+
 require __DIR__ . '/../includes/conexao.php';
 
 $result = $conn->query("SELECT id, nome, quantidade, valor FROM produtos ORDER BY nome");
