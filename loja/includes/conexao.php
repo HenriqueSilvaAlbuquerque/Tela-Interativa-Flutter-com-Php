@@ -1,4 +1,7 @@
 <?php
+// Faz o mysqli lançar exceção em qualquer versão do PHP (antes do 8.1 ele só gerava warning).
+mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+
 $cfg = @include __DIR__ . '/../config.php';
 
 try {
