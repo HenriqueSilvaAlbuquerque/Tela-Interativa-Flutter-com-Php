@@ -1,0 +1,151 @@
+:root {
+    --fundo: #F7F6F3;
+    --card: #FFFFFF;
+    --texto: #1C1B1F;
+    --suave: #5E5C57;
+    --borda: #E3E1DC;
+    --destaque: #1B6B4F;
+}
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+
+body {
+    margin: 0;
+    background: var(--fundo);
+    color: var(--texto);
+    font-family: Roboto, system-ui, sans-serif;
+}
+
+header, footer { background: var(--card); }
+
+header {
+    padding: 20px;
+    border-bottom: 1px solid var(--borda);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+}
+
+h1 { margin: 0; font-size: 22px; font-weight: 500; }
+h2 { margin: 0; font-size: 16px; font-weight: 500; }
+.suave { margin: 0; font-size: 14px; color: var(--suave); }
+
+main {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 16px 16px 120px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px;
+    background: var(--card);
+    border: 1px solid var(--borda);
+    border-radius: 12px;
+}
+
+.info { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 4px; }
+.preco { font-size: 18px; font-weight: 700; color: var(--destaque); }
+
+.stepper { display: flex; align-items: center; gap: 4px; }
+.stepper span { min-width: 28px; text-align: center; font-weight: 500; }
+
+button, .botao {
+    font: inherit;
+    cursor: pointer;
+    border-radius: 24px;
+    text-decoration: none;
+}
+
+button:disabled { opacity: .5; cursor: default; }
+
+.redondo {
+    width: 44px; height: 44px;
+    border-radius: 22px;
+    font-size: 24px; font-weight: 700; line-height: 1;
+}
+
+.mais { border: none; background: var(--destaque); color: #fff; }
+.menos { border: 2px solid var(--destaque); background: #fff; color: var(--destaque); }
+
+.esgotado {
+    padding: 6px 12px;
+    border-radius: 16px;
+    background: #ECEAE5;
+    color: var(--suave);
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.primario {
+    height: 48px; padding: 0 24px;
+    border: none;
+    background: var(--destaque);
+    color: #fff;
+    font-weight: 500;
+    display: inline-flex; align-items: center;
+}
+
+.texto { height: 44px; padding: 0 16px; border: none; background: none; color: var(--destaque); font-weight: 500; }
+.link { color: var(--destaque); font-weight: 500; text-decoration: none; }
+
+footer {
+    position: fixed; left: 0; right: 0; bottom: 0;
+    padding: 16px 20px;
+    border-top: 1px solid var(--borda);
+    display: flex; align-items: center; gap: 12px;
+}
+
+footer div { flex: 1; display: flex; flex-direction: column; gap: 2px; }
+#total { font-size: 20px; font-weight: 700; }
+
+dialog {
+    width: min(360px, calc(100% - 48px));
+    padding: 24px;
+    border: none;
+    border-radius: 28px;
+}
+
+dialog::backdrop { background: rgba(28, 27, 31, .5); }
+dialog h2 { font-size: 22px; margin-bottom: 8px; }
+
+.linha { display: flex; justify-content: space-between; gap: 12px; padding: 4px 0; }
+.linha.total { margin-top: 8px; padding-top: 12px; border-top: 1px solid var(--borda); font-size: 17px; font-weight: 700; }
+.acoes { display: flex; justify-content: flex-end; gap: 8px; margin-top: 16px; }
+
+form.card { flex-direction: column; align-items: stretch; gap: 16px; }
+form .primario { justify-content: center; }
+
+.secundario {
+    height: 48px; padding: 0 20px;
+    border: 2px solid var(--destaque);
+    background: #fff;
+    color: var(--destaque);
+    font-weight: 500;
+}
+
+.repor { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+#lista { display: flex; flex-direction: column; gap: 12px; }
+.menu { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; justify-content: flex-end; }
+.repor input { width: 80px; }
+label { display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 500; }
+
+input {
+    height: 48px; padding: 0 12px;
+    font: inherit;
+    border: 1px solid #C9C6C0;
+    border-radius: 8px;
+    background: #fff;
+}
+
+input:focus { outline: 2px solid var(--destaque); border-color: transparent; }
+
+.aviso { padding: 12px 16px; border-radius: 12px; background: #E3F0EA; color: #124A37; }
+.aviso.erro { background: #F8E5E0; color: #8A2A12; }
